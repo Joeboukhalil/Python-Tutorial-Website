@@ -1,0 +1,237 @@
+<html> 
+ <head> 
+  <title>Python Tutorial</title> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"> 
+ </head> 
+ <body> 
+  <header> 
+   <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
+    <div class="container"> <a class="navbar-brand" href="#">Python Tutorial</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
+     <div class="collapse navbar-collapse" id="navbarNav"> 
+      <ul class="navbar-nav"> 
+       <li class="nav-item"> <a class="nav-link" href="#introduction">Introduction</a> </li> 
+       <li class="nav-item"> <a class="nav-link" href="#basics">Python Basics</a> </li> 
+       <li class="nav-item"> <a class="nav-link" href="#control-structures">Control Structures</a> </li> 
+       <li class="nav-item"> <a class="nav-link" href="#functions">Functions</a> </li> 
+      </ul> 
+     </div> 
+    </div> 
+   </nav> 
+  </header> 
+  <main> 
+   <section id="introduction"> 
+    <div class="container"> 
+     <h1>Introduction to Python</h1> 
+     <p>Welcome to the Python tutorial! In this section, we will provide a brief introduction to Python and its features.</p> 
+     <p>Python is a high-level programming language known for its simplicity and readability. It is widely used for various applications such as web development, data analysis, and artificial intelligence.</p> 
+     <p>By learning Python, you will gain a valuable skill that can open up numerous opportunities in the tech industry.</p> 
+    </div> 
+   </section> 
+   <section id="basics"> 
+    <div class="container"> 
+     <h2>Python Basics</h2> 
+     <p>In this section, we will cover the basic concepts of Python programming language.</p> 
+     <ul> <!-- Add this content within the "basics" section of your HTML file --> 
+      <section id="basics"> 
+       <div class="container"> 
+        <h2>Python Basics - Variables and Data Types</h2> 
+        <p>In this section, we will cover the basic concepts of variables and data types in Python programming language.</p> 
+        <h3>Variables</h3> 
+        <p>Variables are used to store and manage data in a program. In Python, you can create a variable and assign a value to it like this:</p> 
+        <pre><code># Example of creating a variable
+my_variable = 42
+print(my_variable)
+    </code></pre> 
+        <h3>Data Types</h3> 
+        <p>Python supports various data types. Here are some common ones:</p> 
+        <pre><code># Examples of different data types
+integer_variable = int(input("Enter an integer: "))
+float_variable = float(input("Enter a float: "))
+string_variable = input("Enter a string: ")
+boolean_variable = bool(input("Enter a boolean (True/False): "))
+
+print(integer_variable)
+print(float_variable)
+print(string_variable)
+print(boolean_variable)
+    </code></pre> 
+        <h3>Custom Print</h3> 
+        <p>Try using the <code>print</code> function with a user-input integer:</p> <textarea id="customPrintCodeInput" rows="3" cols="50"></textarea> 
+        <br> <button type="button" onclick="runCustomPrintCode()">Run Code</button> 
+        <h3>Output:</h3> 
+        <pre id="customPrintOutput"></pre> 
+        <script>
+      function runCustomPrintCode() {
+        // Retrieve code from the input area
+        var customPrintCode = document.getElementById("customPrintCodeInput").value;
+
+        // Try to execute the user's code
+        try {
+          // Create a function to capture the console output
+          var consoleOutput = "";
+          function captureLog(message) {
+            consoleOutput += message + "\n";
+          }
+
+          // Replace the console.log function temporarily
+          var originalConsoleLog = console.log;
+          console.log = captureLog;
+
+          // Execute the user's code with a custom print function
+          eval(`function print(value) { console.log(value); }\n${customPrintCode}`);
+
+          // Restore the original console.log function
+          console.log = originalConsoleLog;
+
+          // Display the captured output
+          document.getElementById("customPrintOutput").innerHTML = consoleOutput;
+        } catch (error) {
+          // Display any errors that occur during code execution
+          document.getElementById("customPrintOutput").innerHTML = "Error: " + error.message;
+        }
+      }
+    </script> 
+       </div> 
+      </section> <!-- Add this content within the "basics" section of your HTML file --> 
+      <section id="basics"> 
+       <div class="container"> 
+        <h2>Python Basics - Operators</h2> 
+        <p>In this section, we will cover various operators in Python and how to use them.</p> 
+        <h3>Arithmetic Operators</h3> 
+        <p>Arithmetic operators perform mathematical operations on numeric values:</p> 
+        <p>- Addition (`+`): Adds two values together. Example: `print(5 + 3)`</p> 
+        <p>- Subtraction (`-`): Subtracts the right operand from the left operand. Example: `print(7 - 2)`</p> 
+        <p>- Multiplication (`*`): Multiplies two values. Example: `print(4 * 6)`</p> 
+        <p>- Division (`/`): Divides the left operand by the right operand. Example: `print(8 / 2)`</p> 
+        <p>- Modulus (`%`): Returns the remainder of the division of the left operand by the right operand. Example: `print(9 % 4)`</p> 
+        <p>- Exponentiation (`**`): Raises the left operand to the power of the right operand. Example: `print(2 ** 3)`</p> 
+        <h3>Comparison Operators</h3> 
+        <p>Comparison operators compare two values and return a Boolean result:</p> - Equal to (`==`): Checks if two values are equal. Example: `print(5 == 5)` - Not equal to (`!=`): Checks if two values are not equal. Example: `print(7 != 3)` - Greater than (`&gt;`): Checks if the left operand is greater than the right operand. Example: `print(8 &gt; 4)` - Less than (`&lt;`): Checks if the left operand is less than the right operand. Example: `print(3 &lt; 6)` - Greater than or equal to (`&gt;=`): Checks if the left operand is greater than or equal to the right operand. Example: `print(10 &gt;= 8)` - Less than or equal to (`&lt;=`): Checks if the left operand is less than or equal to the right operand. Example: `print(2 &lt;= 4)` 
+        <h3>Logical Operators</h3> 
+        <p>Logical operators perform logical operations on Boolean values:</p> - AND (`and`): Returns True if both operands are True. Example: `print(True and False)` 
+        <br> - OR (`or`): Returns True if at least one operand is True. Example: `print(True or False)` 
+        <br> - NOT (`not`): Returns True if the operand is False, and vice versa. Example: `print(not True)` 
+        <h3>Bitwise Operators</h3> 
+        <p>Bitwise operators perform operations on binary representations of numbers:</p> - AND (`&amp;`): Performs a bitwise AND operation. Example: `print(5 &amp; 3)` - OR (`|`): Performs a bitwise OR operation. Example: `print(5 | 3)` - XOR (`^`): Performs a bitwise XOR (exclusive OR) operation. Example: `print(5 ^ 3)` - NOT (`~`): Performs a bitwise NOT operation. Example: `print(~5)` - Left Shift (`&lt;&lt;`): Shifts the bits of the left operand to the left by the number of positions specified by the right operand. Example: `print(5 &lt;&lt; 1)` - Right Shift (`&gt;&gt;`): Shifts the bits of the left operand to the right by the number of positions specified by the right operand. Example: `print(5 &gt;&gt; 1)` <!-- You can continue with other types of operators as needed --> 
+       </div> 
+      </section> 
+       <!-- Add this content within the "basics" section of your HTML file -->
+<section id="basics">
+  <div class="container">
+    <h2>Python Basics - Conditional Statements</h2>
+    <p>Conditional statements allow you to control the flow of your program based on certain conditions. In Python, the most common conditional statements are <code>if</code>, <code>else</code>, and <code>elif</code>.</p>
+
+    <h3>if Statement</h3>
+    <p>The <code>if</code> statement is used to execute a block of code only if a specified condition is true:</p>
+
+    <pre><code>age = 18
+if age >= 18:
+    print("You are eligible to vote.")
+</code></pre>
+
+    <h3>if-else Statement</h3>
+    <p>The <code>if-else</code> statement allows you to specify two blocks of code: one to be executed if the condition is true, and another if it's false:</p>
+
+    <pre><code>age = 16
+if age >= 18:
+    print("You are eligible to vote.")
+else:
+    print("You are not eligible to vote yet.")
+</code></pre>
+
+    <h3>elif Statement</h3>
+    <p>The <code>elif</code> statement is used to check multiple conditions. It comes after an <code>if</code> statement, and only executes if the previous conditions were false:</p>
+
+    <pre><code>score = 75
+if score >= 90:
+    print("Excellent!")
+elif score >= 70:
+    print("Good job!")
+else:
+    print("You need improvement.")
+</code></pre>
+
+    <h3>Nested if Statements</h3>
+    <p>You can also nest conditional statements to check for more complex conditions:</p>
+
+    <pre><code>age = 25
+if age >= 18:
+    print("You are eligible to vote.")
+    if age >= 21:
+        print("You can also purchase alcohol.")
+else:
+    print("You are not eligible to vote yet.")
+</code></pre>
+
+    <!-- You can continue with other concepts related to conditional statements as needed -->
+
+  </div>
+</section>
+
+       <!-- Add this content within the "basics" section of your HTML file -->
+<section id="basics">
+  <div class="container">
+    <h2>Python Basics - Loops</h2>
+    <p>Loops in Python allow you to repeatedly execute a block of code. The two most common types of loops are <code>for</code> and <code>while</code> loops.</p>
+
+    <h3>for Loop</h3>
+    <p>The <code>for</code> loop is used to iterate over a sequence (such as a list, tuple, string, or range) and execute a block of code for each item in the sequence:</p>
+
+    <pre><code>fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)
+</code></pre>
+
+    <h3>while Loop</h3>
+    <p>The <code>while</code> loop is used to repeatedly execute a block of code as long as a specified condition is true:</p>
+
+    <pre><code>count = 0
+while count < 5:
+    print("Count is", count)
+    count += 1
+</code></pre>
+
+    <h3>Loop Control Statements</h3>
+    <p>Python provides control statements to modify the execution of loops:</p>
+
+    - <code>break</code>: Terminates the loop and transfers control to the statement immediately following the loop.
+    - <code>continue</code>: Skips the rest of the code inside the loop for the current iteration and moves to the next iteration.
+
+    <pre><code>numbers = [1, 2, 3, 4, 5]
+for num in numbers:
+    if num == 3:
+        print("Found 3, breaking the loop")
+        break
+    print(num)
+</code></pre>
+
+    <pre><code>numbers = [1, 2, 3, 4, 5]
+for num in numbers:
+    if num == 3:
+        print("Skipping 3")
+        continue
+    print(num)
+</code></pre>
+
+    <h3>Nested Loops</h3>
+    <p>You can also nest loops, meaning one loop inside another:</p>
+
+    <pre><code>for i in range(3):
+    for j in range(2):
+        print(f"({i}, {j})")
+</code></pre>
+
+    <!-- You can continue with other loop-related concepts as needed -->
+   
+  
+  </main> 
+  <footer class="bg-light text-center py-3"> 
+   <div class="container"> 
+    <p>© 2023 Python Tutorial. All rights reserved.</p> 
+   </div> 
+  </footer> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script> 
+ </body>
+</html>
+
+   
